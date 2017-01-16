@@ -249,7 +249,11 @@ class MY_SSH(paramiko.SSHClient):
 
 # str_username = "user"
 # str_password = "password"
-str_username, str_password = login_window()
+str_username, str_password = login_window('Paramiko_wrapper')
+
+if len(str_username) == 0 or len(str_password) == 0:
+    print("no username or password supplied, please start again")
+    sys.exit(1)
 
 str_server = "10.10.10.25"
 
